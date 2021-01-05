@@ -1,7 +1,6 @@
 /*
-Como crear un módulo mínimo, como consumirlo a dicho módulo y también como consumir módulos que vienen por defecto en Node.js. 
-*/
-/*
+En este mini codigo vemos como crear un módulo mínimo, como consumirlo a dicho módulo y también como consumir módulos que vienen por defecto en Node.js. 
+
 Confeccionar un programa que requiera el módulo 'os' para recuperar el espacio libre de memoria. Mostrar inicialmente el epacio libre mediante el método freemem()
 Luego crear un vector y mediante el método push almacenar 1000000 de enteros. Mostrar luego de la creación y carga del vector la cantidad de espacio libre.
 */

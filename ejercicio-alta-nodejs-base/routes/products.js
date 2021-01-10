@@ -1,24 +1,10 @@
 var express = require('express');
 var router = express.Router();
+var productsController = require("../controllers/productsController");
 
 /* GET users listing. */ 
-/*req es toda la información que nos llega
-el res es lo que yo devuelvo
-*/
-router.get('/', function (req, res, next) { /* si por el metodo get mandamos una barra responde con el metodo*/
-    const productos =[ //creo una constante con un json interno dentro del array
-        { 
-            id:1,
-            name: "Moto g"
-
-        }
-        {
-            id: 2,
-            name: "Moto X"
-
-        }
-    ]
-    res.json(productos); // le mandamos este array
-}); /* pero si mandamos otra cosa siempre mostrara el notfound ejemplo pagina/users/sarasa */
+/* va  a devolver el objeto products controler con el metodo gettall  */
+router.get('/', productsController.getAll); /* pero si mandamos otra cosa siempre mostrara el notfound ejemplo pagina/users/sarasa */
+router.get('/:id', productsController.getById); /* llamamos directamente al elemento id del modulo getById*/
 
 module.exports = router;

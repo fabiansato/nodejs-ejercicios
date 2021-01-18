@@ -6,7 +6,8 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var productsRouter = require('./routes/products');
+var productsRouter = require('./routes/products'); //agregar siempre require nuevos sin la extensión
+
 
 var app = express();
 
@@ -20,8 +21,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/', indexRouter); /* la pagina principal va a buscarla a routes/index.js */
+app.use('/users', usersRouter); /* si se ingresa en proyecto/users lo va a buscar a routers/users.js*/
+app.use('/products', productsRouter); /* si se ingresa en proyecto/users lo va a buscar a routers/users.js*/
 app.use('/productos', productsRouter);
 
 // catch 404 and forward to error handler
